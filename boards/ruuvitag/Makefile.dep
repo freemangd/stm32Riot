@@ -1,0 +1,12 @@
+ifneq (,$(filter saul_default,$(USEMODULE)))
+  USEMODULE += saul_gpio
+  USEMODULE += bme280_spi
+  USEMODULE += lis2dh12_spi
+endif
+
+# Use Segger's RTT by default for stdio on this board
+DEFAULT_MODULE += stdio_rtt
+
+USEMODULE += boards_common_nrf52xxdk
+
+include $(RIOTBOARD)/common/nrf52/Makefile.dep
